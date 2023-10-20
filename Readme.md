@@ -13,4 +13,4 @@ git clone https://github.com/AlexisGoument/FizzBuzz.git
 0. Project basis: FizzBuzz class with method CountTo100
 1. Test project with nuget NUnit
 2. Implement class FizzBuzz + Test (DummyClass allows to test method IsMultiple3 without public accessor)
-3. Bonus: Add a repository Database.Log(int nb) and test it
+3. Bonus: Add a repository Database.Log(int nb) and test it (with nuget [NSubstitute](https://nsubstitute.github.io/))
