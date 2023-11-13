@@ -2,6 +2,20 @@
 {
     public class FizzBuzz
     {
+        private DatabaseInterface _database;
+
+        public FizzBuzz(DatabaseInterface database)
+        {
+            _database = database;
+        }
+
+        public string[] TransformFromDatabase()
+        {
+            var numbers = _database.GetNumbers();
+
+            throw new NotImplementedException();
+        }
+
         public string[] CountTo100()
         {
             var results = new List<string>();

@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            var fizzBuzz = new FizzBuzz();
+            var database = new Database();
+            var fizzBuzz = new FizzBuzz(database);
 
             var lines = fizzBuzz.CountTo100();
 
@@ -12,6 +13,9 @@
             {
                 Console.WriteLine(line);
             }
+
+            fizzBuzz.TransformFromDatabase();
+
             Console.ReadLine();
         }
     }

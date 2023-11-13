@@ -1,7 +1,12 @@
+using FizzBuzz;
+
 namespace FizzBuzzTests
 {
     public class DummyFizzBuzz : FizzBuzz.FizzBuzz
     {
+        public DummyFizzBuzz(DatabaseInterface database) : base(database)
+        { }
+
         public new bool IsMultiple3(int nb)
         {
             return base.IsMultiple3(nb);
@@ -15,12 +20,13 @@ namespace FizzBuzzTests
 
     public class FizzBuzzTests
     {
+        private DatabaseInterface _database;
         private DummyFizzBuzz _fizzBuzz;
 
         [SetUp]
         public void Setup()
         {
-            _fizzBuzz = new DummyFizzBuzz();
+            _fizzBuzz = new DummyFizzBuzz(_database);
         }
 
         [Test]
