@@ -1,4 +1,5 @@
 using FizzBuzz;
+using NSubstitute;
 
 namespace FizzBuzzTests
 {
@@ -75,6 +76,17 @@ namespace FizzBuzzTests
         {
             var results = _fizzBuzz.CountTo100();
             Assert.That(results[0], Is.EqualTo("1"));
+        }
+
+        [Test]
+        public void FizzBuzz_TransformFromDatabase()
+        {
+            var numbers = new[] { 1, 2, 3, 4, 5, 15 };
+            _database.GetNumbers().Returns(numbers);
+            
+            var result = _fizzBuzz.TransformFromDatabase();
+
+            CollectionAssert.AreEqual(new int[] { "1", "2", "Fizz", "4", "Buzz", "FizzBuzz" }, result);
         }
     }
 }
