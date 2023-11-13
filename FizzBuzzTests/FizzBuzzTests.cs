@@ -82,11 +82,11 @@ namespace FizzBuzzTests
         public void FizzBuzz_TransformFromDatabase()
         {
             var numbers = new[] { 1, 2, 3, 4, 5, 15 };
-            _database.GetNumbers().Returns(numbers);
+            _database.GetNumbers().ReturnsForAnyArgs(numbers);
             
             var result = _fizzBuzz.TransformFromDatabase();
 
-            CollectionAssert.AreEqual(new int[] { "1", "2", "Fizz", "4", "Buzz", "FizzBuzz" }, result);
+            CollectionAssert.AreEqual(new [] { "1", "2", "Fizz", "4", "Buzz", "FizzBuzz" }, result);
         }
     }
 }
