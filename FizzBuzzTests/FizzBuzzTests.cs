@@ -27,6 +27,7 @@ namespace FizzBuzzTests
         [SetUp]
         public void Setup()
         {
+            _database = Substitute.For<DatabaseInterface>();
             _fizzBuzz = new DummyFizzBuzz(_database);
         }
 
