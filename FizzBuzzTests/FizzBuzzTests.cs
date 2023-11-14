@@ -89,5 +89,16 @@ namespace FizzBuzzTests
 
             CollectionAssert.AreEqual(new [] { "1", "2", "Fizz", "4", "Buzz", "FizzBuzz" }, result);
         }
+
+        [Test]
+        public void FizzBuzz_TransformFromDatabase_WhenEmpty()
+        {
+            var numbers = Array.Empty<int>();
+            _database.GetNumbers().ReturnsForAnyArgs(numbers);
+            
+            var result = _fizzBuzz.TransformFromDatabase();
+
+            Assert.That(result.Length, Is.EqualTo(0));
+        }
     }
 }
